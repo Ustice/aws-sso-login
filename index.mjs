@@ -12,7 +12,7 @@ const awsCredentialsPath = resolve(os.homedir(), '.aws/credentials')
 main()
   .then(() => 0)
   .catch((error) => {
-    console.error(error)
+    console.error(args.debug ? error : error.message)
 
     if (!args.showBrowser) {
       return 1
